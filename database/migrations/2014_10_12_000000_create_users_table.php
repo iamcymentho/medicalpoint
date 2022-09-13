@@ -23,7 +23,7 @@ return new class extends Migration
             $table->integer('role_id');
             $table->string('address')->nullable();
             $table->string('phone_number')->nullable();
-            $table->string('department')->nullable();
+            $table->integer('department_id')->nullable();
             $table->string('image')->nullable();
             $table->string('education')->nullable();
             $table->text('description')->nullable();

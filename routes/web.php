@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DoctorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,16 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| doctor Routes
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::resource('doctor', DoctorController::class);
 
 
 Auth::routes();
