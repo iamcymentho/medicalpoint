@@ -9,7 +9,7 @@
     <i class="ik ik-edit bg-blue"></i>
     <div class="d-inline">
         <h5>Doctors</h5>
-        <span>Add User</span>
+        <span>Add Doctor</span>
     </div>
 </div>
 </div>
@@ -40,7 +40,7 @@
             <div class="card-header">
 
                 <div class="mx-auto">
-                    <h2>Add User</h2>
+                    <h2>Add Doctor</h2>
                 </div>
                 {{-- card header ends here --}}
             </div>

@@ -18,7 +18,11 @@
         {{-- <span class="badge badge-pill badge-dark"><b>Role :</b>&nbsp;&nbsp; {{ $user->role->name }}</span> --}}
 
         <p class="mt-2"><b>Name :</b>&nbsp;&nbsp; {{ $user->name }}
-         <span class="badge badge-pill badge-primary">{{ $user->role->name }}</span>
+          @if ($user->role->name == 'admin')
+              <span class="badge badge-pill badge-primary">{{ $user->role->name }}</span>
+          @else
+         <span class="badge badge-pill badge-success">{{ $user->role->name }}</span>
+         @endif
         </p>
         <p class="mt-2"><b>Email Address :</b>&nbsp;&nbsp; {{ $user->email }}</p>
         <p class="mt-2"><b>Address :</b>&nbsp;&nbsp; {{ $user->address }}</p>

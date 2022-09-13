@@ -22,7 +22,7 @@ Route::get('/', function () {
 
 /*
 |--------------------------------------------------------------------------
-| dashboard Routes
+| DASHBOARD ROUTES
 |--------------------------------------------------------------------------
 |
 */
@@ -34,12 +34,16 @@ Route::get('/dashboard', function () {
 
 /*
 |--------------------------------------------------------------------------
-| doctor Routes
+| DOCTOR ROUTES
 |--------------------------------------------------------------------------
 |
 */
 
-Route::resource('doctor', DoctorController::class);
+Route::group(['middleware' => ['auth', 'admin']], function () {
+
+    Route::resource('doctor', DoctorController::class);
+});
+
 
 
 Auth::routes();
