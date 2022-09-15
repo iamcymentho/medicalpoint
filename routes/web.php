@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\AppointmentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +43,22 @@ Route::get('/dashboard', function () {
 Route::group(['middleware' => ['auth', 'admin']], function () {
 
     Route::resource('doctor', DoctorController::class);
+});
+
+/*
+|--------------------------------------------------------------------------
+| APPOINTMENT ROUTES
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::group(['middleware' => ['auth', 'doctor']], function () {
+
+    Route::resource('appointment', AppointmentController::class);
+
+    Route::post('/appointment/check', [AppointmentController::class, 'check'])->name('appointment.check');
+
+    Route::post('/appointment/update', [AppointmentController::class, 'updateTime'])->name('update');
 });
 
 

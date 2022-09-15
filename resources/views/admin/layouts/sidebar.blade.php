@@ -24,13 +24,24 @@
             <a href="pages/navbar.html"><i class="ik ik-menu"></i><span>Navigation</span> <span class="badge badge-success">New</span></a>
         </div> --}}
         <div class="nav-item has-sub">
-            <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Doctor</span> <span class="badge badge-danger">150+</span></a>
+            <a href="javascript:void(0)"><i class="ik ik-layers"></i><span>Admin</span> <span class="badge badge-danger">150+</span></a>
             <div class="submenu-content">
                 <a href="{{ route('doctor.index') }}" class="menu-item">View user</a>
                 <a href="{{ route('doctor.create') }}" class="menu-item">Create  user</a>
                 
             </div>
         </div>
+
+         <div class="nav-item has-sub">
+            <a href="javascript:void(0)"><i class="ik ik-calendar"></i><span>Appointment</span> <span class="badge badge-danger">45+</span></a>
+            <div class="submenu-content">
+                <a href="{{ route('appointment.create') }}" class="menu-item">Create appointment</a>
+                <a href="{{ route('appointment.index') }}" class="menu-item">View appointment</a>
+                
+            </div>
+        </div>
+
+
         <div class="nav-lavel">UI Element</div>
         <div class="nav-item has-sub">
             <a href="#"><i class="ik ik-box"></i><span>Basic</span></a>
