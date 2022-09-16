@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AppointmentController;
 
 /*
@@ -16,11 +17,12 @@ use App\Http\Controllers\AppointmentController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
+Route::get('/', [FrontEndController::class, 'index']);
 /*
 |--------------------------------------------------------------------------
 | DASHBOARD ROUTES
@@ -61,6 +63,14 @@ Route::group(['middleware' => ['auth', 'doctor']], function () {
     Route::post('/appointment/update', [AppointmentController::class, 'updateTime'])->name('update');
 });
 
+
+/*
+|--------------------------------------------------------------------------
+| ROUTES FOR APPOINTMENT BOOKING FROM HOMEPAGE
+|--------------------------------------------------------------------------
+|
+*/
+Route::get('/new-appointment/{doctorId}/{date}', [FrontEndController::class, 'show'])->name('create.appointment');
 
 
 Auth::routes();
