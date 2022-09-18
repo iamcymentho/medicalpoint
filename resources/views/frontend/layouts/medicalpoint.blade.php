@@ -21,6 +21,7 @@
     </div> --}}
     {{-- <hr> --}}
     <section class="">
+        <form action="{{ url('/') }}" method="GET">
         <div class="card">
             <div class="card-header clear">Find Doctors</div>
                 <div class="card-body">
@@ -29,13 +30,17 @@
                             <input type="text" class="form-control " id="datepicker"  name="date" placeholder="search availability date">
                         </div>
                         <div class="col-sm-4">
-                            <a href="#" class="template-btn">Find Doctors</a>
+                            {{-- <a href="#" class="template-btn">Find Doctors</a> --}}
+
+                            <button type="submit" class="template-btn mybutton">Find doctors</button>
                         </div>
 
                     </div>
                 </div>
                 
             </div>
+
+            </form>
 
             <div class="card mt-1">
             <div class="card-header clear"> Doctors available today</div>
@@ -87,6 +92,20 @@
             </div>
         </div>
 
+         <script>
+
+    var dateToday = new Date();
+  $( function() {
+    $("#datepicker").datepicker({
+        dateFormat:"yy-mm-dd",
+        showButtonPanel:true,
+        numberOfMonths:2,
+        minDate:dateToday,
+    });
+});
+
+  </script>
+
         <style>
             .template-btn-success{
                 background: rgb(24,182,9);
@@ -103,6 +122,11 @@
             .clear{
                 font-family: 'Satisfy', cursive;
                 font-size: 30px;
+            }
+
+            .mybutton{
+                border: none;
+                border-color: none;
             }
         </style>
     </section>
