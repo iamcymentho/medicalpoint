@@ -15,9 +15,12 @@ class FrontEndController extends Controller
     {
         date_default_timezone_set('Africa/Lagos'); //setting default time zone for Africa
 
-        if (request('date')) {
-            dd($this->findDoctorsBasedOnDate(request('date')));
-        }
+        // if (request('date')) {
+        //     $doctors = $this->findDoctorsBasedOnDate(request('date'));
+        //     // return view('welcome', compact('doctors'));
+
+        //     // dd($doctors);
+        // }
 
         // dd(date('Y-m-d'));
         $doctors = Appointment::where('date', date('Y-m-d'))->get();
@@ -36,9 +39,11 @@ class FrontEndController extends Controller
         return view('appointment', compact('times', 'date', 'user'));
     }
 
+
     public function findDoctorsBasedOnDate($date)
     {
         $doctors = Appointment::where('date', $date)->get();
         return $doctors;
+        // dd($doctors);
     }
 }

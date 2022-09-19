@@ -20,7 +20,7 @@
         
     </div> --}}
     {{-- <hr> --}}
-    <section class="">
+    <section class="" id="searchdoctor">
         <form action="{{ url('/') }}" method="GET">
         <div class="card">
             <div class="card-header clear">Find Doctors</div>
