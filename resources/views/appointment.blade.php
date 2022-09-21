@@ -50,7 +50,7 @@
                     <div class="row">
                         @foreach($times as $time)
                         <div class="col-md-3 mb-3">
-                            <label class="btn btn-outline-success">
+                            <label class="btn btn-outline-primary">
                                 <input type="radio" name="time" value="{{$time->time}}" >
                                 <span>{{$time->time}}
                                     </span>
@@ -70,13 +70,13 @@
                     </div>
                 </div>
                </div>
-               <div class="card-footer">
+               <div class="card-footer mb-5">
                 @if(Auth::check())
                 <button type="submit" class="btn btn-success" style="width: 100%;">Book Appointment</button>
                 @else 
-                    <p>Please login to make an appointment</p>
-                    <a href="/register">Register</a>
-                    <a href="/login">Login</a>
+                    <p  class="alert alert-warning"><b>Please login to make an appointment</b></p>
+                    <a href="/register" class="btn btn-outline-danger">Register</a>
+                    <a href="/login" class="btn btn-outline-danger">Login</a>
                 @endif
 
                    

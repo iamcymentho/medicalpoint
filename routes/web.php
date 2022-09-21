@@ -6,6 +6,7 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +85,18 @@ Route::get('/new-appointment/{doctorId}/{date}', [FrontEndController::class, 'sh
 Route::post('/book/appointment', [FrontEndController::class, 'store'])->name('booking.appointment')->middleware('auth');
 
 Route::get('/my-booking', [FrontEndController::class, 'myBookings'])->name('my.booking')->middleware('auth');
+
+
+/*
+|--------------------------------------------------------------------------
+|  ROUTES FOR USER PROFILE
+|--------------------------------------------------------------------------
+|
+*/
+
+Route::get('/profile', [ProfileController::class, 'index']);
+
+Route::post('/profile', [ProfileController::class, 'store']);
 
 
 

@@ -41,11 +41,10 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        @if (auth()->user()->role->name == 'patient')
-
+                         @if(auth()->check()&& auth()->user()->role->name === 'patient')
                             <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('my.booking') }}">{{ __('My Bookings') }}</a>
-                                </li>
+                                <a class="nav-link" href="{{ route('my.booking') }}" style="color: #fff; font-size:16px; font-weight: bold;">{{ __('My Bookings') }}</a>
+                            </li>
                         @endif
 
                         <!-- Authentication Links -->
@@ -63,7 +62,7 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color: #fff; font-size:16px; font-weight: bold;">
                                     {{ Auth::user()->name }}
                                 </a>
 

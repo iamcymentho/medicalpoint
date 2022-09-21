@@ -8,7 +8,17 @@
 
 @include('frontend.layouts.welcome')
 
-@include('frontend.layouts.medicalpoint')
+@include('frontend.layouts.finddoctors')
+
+@include('frontend.layouts.department')
+
+@include('frontend.layouts.hotline')
+
+@include('frontend.layouts.patient')
+
+@include('frontend.layouts.specialist')
+
+{{-- @include('frontend.layouts.news') --}}
 
 
 @endsection

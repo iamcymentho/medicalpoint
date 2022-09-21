@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-top text-center">
-                        <h2>Our specialish</h2>
+                        <h2>Our specialist</h2>
                         <p>Green above he cattle god saw day multiply under fill in the cattle fowl a all, living, tree word link available in the service for subdue fruit.</p>
                     </div>
                 </div>
