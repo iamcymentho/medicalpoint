@@ -32,7 +32,7 @@ Route::get('/', [FrontEndController::class, 'index']);
 |
 */
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class,  'index']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -76,27 +76,34 @@ Route::group(['middleware' => ['auth', 'doctor']], function () {
 */
 Route::get('/new-appointment/{doctorId}/{date}', [FrontEndController::class, 'show'])->name('create.appointment');
 
-/*
+
+
+Route::group(['middleware' => ['auth', 'patient']], function () {
+
+    /*
 |--------------------------------------------------------------------------
 |  ROUTES FOR USER BOOKINGS
 |--------------------------------------------------------------------------
 |
 */
-Route::post('/book/appointment', [FrontEndController::class, 'store'])->name('booking.appointment')->middleware('auth');
+    Route::post('/book/appointment', [FrontEndController::class, 'store'])->name('booking.appointment');
 
-Route::get('/my-booking', [FrontEndController::class, 'myBookings'])->name('my.booking')->middleware('auth');
+    Route::get('/my-booking', [FrontEndController::class, 'myBookings'])->name('my.booking');
 
-
-/*
+    /*
 |--------------------------------------------------------------------------
 |  ROUTES FOR USER PROFILE
 |--------------------------------------------------------------------------
 |
 */
+    Route::get('/user-profile', [ProfileController::class, 'index']);
 
-Route::get('/profile', [ProfileController::class, 'index']);
+    Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
 
-Route::post('/profile', [ProfileController::class, 'store']);
+    Route::post('/profile-pic', [ProfileController::class, 'profilePic'])->name('profile.pic');
+});
+
+
 
 
 

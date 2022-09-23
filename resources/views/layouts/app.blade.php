@@ -43,7 +43,7 @@
                     <ul class="navbar-nav ms-auto">
                          @if(auth()->check()&& auth()->user()->role->name === 'patient')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('my.booking') }}" style="color: #fff; font-size:16px; font-weight: bold;">{{ __('My Bookings') }}</a>
+                                <a class="nav-link" href="{{ route('my.booking') }}" style="color: #fff; font-size:16px; font-weight: bold;">{{ __(' Bookings') }}</a>
                             </li>
                         @endif
 
@@ -67,6 +67,18 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+
+                                    @if(auth()->check()&& auth()->user()->role->name === 'patient')
+
+                                    <a class="dropdown-item" href="{{ url('user-profile') }}">
+                                        {{ __('Profile') }}
+                                    </a>
+                                       @else
+                                        <a class="dropdown-item" href="{{ url('dashboard') }}">
+                                        {{ __('Dashboard') }}
+                                    </a>
+                                      @endif
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
