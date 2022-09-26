@@ -6,7 +6,7 @@
 
         <div class="col-md-3">
             <div class="card shadow">
-                <div class="card-header text-center"><b>{{ __('User details') }}</b></div>
+                <div class="card-header text-center bg-dark text-white"><b>{{ __('User details') }}</b></div>
 
                 <div class="card-body">
                    <p><b>Name: </b> {{ auth()->user()->name }}</p>
@@ -38,7 +38,7 @@
             @endif
 
             <div class="card shadow">
-                <div class="card-header text-center"><b>{{ __('Udate Profile') }}</b></div>
+                <div class="card-header text-center bg-dark text-white"><b>{{ __('Udate Profile') }}</b></div>
 
                 <div class="card-body">
                    <form action="{{ route('profile.store') }}" method="POST">
@@ -96,7 +96,7 @@
 
          <div class="col-md-3">
             <div class="card shadow ">
-                <div class="card-header text-center"><b>{{ __('Update profile picture') }}</b></div>
+                <div class="card-header text-center bg-dark text-white"><b>{{ __('Update profile picture') }}</b></div>
 
                 <form action="{{ route('profile.pic') }}" method="POST" enctype="multipart/form-data">
                     @csrf

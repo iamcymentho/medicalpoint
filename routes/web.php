@@ -7,6 +7,7 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PatientListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,9 @@ Route::get('/dashboard', [DashboardController::class,  'index']);
 Route::group(['middleware' => ['auth', 'admin']], function () {
 
     Route::resource('doctor', DoctorController::class);
+    Route::get('/patients', [PatientlistController::class, 'index'])->name('patient');
+    Route::get('/status/update/{id}', [PatientlistController::class, 'toggleStatus'])->name('update.status');
+    Route::get('/patients/all', [PatientlistController::class, 'allTimeAppointments'])->name('all.appointments');
 });
 
 /*
