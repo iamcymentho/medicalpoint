@@ -43,7 +43,13 @@
                     <ul class="navbar-nav ms-auto">
                          @if(auth()->check()&& auth()->user()->role->name === 'patient')
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('my.booking') }}" style="color: #fff; font-size:16px; font-weight: bold;">{{ __(' Bookings') }}</a>
+                                <a class="nav-link fancynav" href="{{ route('my.booking') }}" style="color: #fff; font-size:16px; font-weight: bold;">{{ __(' Bookings') }}</a>
+                            </li>
+                        @endif
+
+                        @if(auth()->check()&& auth()->user()->role->name === 'patient')
+                            <li class="nav-item">
+                                <a class="nav-link fancynav" href="{{ route('my.prescription') }}" style="color: #fff; font-size:16px; font-weight: bold;">{{ __(' Prescriptions') }}</a>
                             </li>
                         @endif
 
@@ -105,6 +111,13 @@
         .navbarcolor{
             background-color: #12151f;
         }
+
+        .fancynav:hover{
+            background-color: rgba(255, 255, 255, 0.9);
+            color:black !important;
+            border-radius: 5px;
+           
+            }
     </style>
 </body>
 </html>

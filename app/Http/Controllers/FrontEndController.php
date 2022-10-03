@@ -6,8 +6,8 @@ use App\Models\Time;
 use App\Models\User;
 use App\Models\Booking;
 use App\Models\Appointment;
+use App\Models\Prescription;
 use Illuminate\Http\Request;
-use App\Prescription;
 use App\Mail\AppointmentMail;
 
 class FrontendController extends Controller
@@ -92,5 +92,11 @@ class FrontendController extends Controller
     {
         $appointments = Booking::latest()->where('user_id', auth()->user()->id)->get();
         return view('booking.index', compact('appointments'));
+    }
+
+    public function myPrescription()
+    {
+        $prescriptions = Prescription::where('user_id', auth()->user()->id)->get();
+        return view('my-prescription', compact('prescriptions'));
     }
 }

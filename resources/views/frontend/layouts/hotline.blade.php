@@ -1,5 +1,5 @@
 <!-- Hotline Area Starts -->
-    <section class="hotline-area text-center section-padding">
+    <section class="hotline-area text-center section-padding" id="hotline">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

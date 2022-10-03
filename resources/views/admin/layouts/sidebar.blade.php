@@ -5,7 +5,7 @@
     <div class="logo-img">
         {{-- <img src="{{ asset('template/src/img/brand-white.svg') }}" class="header-brand-img" alt="lavalite">  --}}
 
-         <img src="{{ asset('template/img/users/microscope.png') }}" class="rounded-circle img-fluid" alt="" width="35">
+         {{-- <img src="{{ asset('template/img/users/microscope.png') }}" class="rounded-circle img-fluid" alt="" width="35"> --}}
     </div>
     <span class="text">MedicalPoint</span>
 </a>
@@ -62,6 +62,32 @@
         </div>  
 
         @endif
+
+          @if(auth()->check()&& auth()->user()->role->name === 'doctor')
+
+         <div class="nav-item has-sub">
+            <a href="javascript:void(0)"><i class="ik ik-calendar"></i><span class="fancyfont1">Patients</span> <span class="badge badge-danger">45+</span></a>
+            <div class="submenu-content">
+                <a href="{{ route('patients.today') }}" class="menu-item">Today's appointment</a>
+                <a href="{{ route('prescribed.patients') }}" class="menu-item">All-time appointments</a>
+                
+            </div>
+        </div>  
+
+        @endif
+
+         <div class="nav-item active">
+            <a onclick="event.preventDefault();
+
+            document.getElementById('logout-form').submit();" href="{{ route('logout') }}"><i class="ik ik-power dropdown-icon"></i><span class="fancyfont1">Logout</span>
+            
+        </a>
+
+         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
+        
+        </div>
        
     </nav>
 </div>

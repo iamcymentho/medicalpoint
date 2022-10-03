@@ -47,8 +47,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 d-md-flex">
-                        <h6 class="mr-3"><span class="mr-2"><i class="fa fa-mobile"></i></span> call us now! +1 305 708 2563</h6>
-                        <h6 class="mr-3"><span class="mr-2"><i class="fa fa-envelope-o"></i></span> medical@example.com</h6>
+                        <h6 class="mr-3"><span class="mr-2"><i class="fa fa-mobile"></i></span> call us now! &nbsp;&nbsp; +234-805-130-8354</h6>
+                        <h6 class="mr-3"><span class="mr-2"><i class="fa fa-envelope-o"></i></span> medicalpoint@gmail.com</h6>
                         <h6><span class="mr-2"><i class="fa fa-map-marker"></i></span> Find our Location</h6>
                     </div>
                     <div class="col-lg-3">
@@ -73,22 +73,16 @@
                 </div>
                 <nav id="nav-menu-container mynav">
                     <ul class="nav-menu">
-                        <li class="menu-active"><a href="index.html"><strong>Home</strong></a></li>
-                        <li><a href="departments.html">departments</a></li>
-                        <li><a href="doctors.html">doctors</a></li>
-                        <li class="menu-has-children"><a href="">Pages</a>
-                            <ul>
-                                <li><a href="about.html">about us</a></li>
-                                <li><a href="elements.html">elements</a></li>
-                            </ul>
-                        </li>
-                        <li class="menu-has-children"><a href="">blog</a>
-                            <ul>
-                                <li><a href="blog-home.html">blog home</a></li>
-                                <li><a href="blog-details.html">blog details</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="contact.html">Contact</a></li>			          				          
+                        <li class="menu-active"><a href="/"><strong>Home</strong></a></li>
+                        <li><a href="#mydepartment">departments</a></li>
+                        <li><a href="#specialist">doctors</a></li>
+                        <li><a href="#feedback">Feedback</a></li>
+                        
+                       
+                        <li><a href="#hotline">Contact</a></li>
+                        
+                        <li><a href="{{ url('/register') }}">Register as patient</a></li>
+                        <li><a href="{{ url('/login') }}">Login</a></li>
                     </ul>
                 </nav><!-- #nav-menu-container -->		    		
                 </div>

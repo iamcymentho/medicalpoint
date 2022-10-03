@@ -1,13 +1,15 @@
 <?php
 
+use App\Models\Prescription;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DoctorController;
-use App\Http\Controllers\FrontendController;
-use App\Http\Controllers\AppointmentController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AppointmentController;
 use App\Http\Controllers\PatientListController;
+use App\Http\Controllers\PrescriptionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,7 +71,25 @@ Route::group(['middleware' => ['auth', 'doctor']], function () {
     Route::post('/appointment/check', [AppointmentController::class, 'check'])->name('appointment.check');
 
     Route::post('/appointment/update', [AppointmentController::class, 'updateTime'])->name('update');
+
+    /*
+        |--------------------------------------------------------------------------
+        | ROUTES FOR PATIENT PRESCRIPTION
+        |--------------------------------------------------------------------------
+        |
+        */
+
+    Route::get('patient-today', [PrescriptionController::class, 'index'])->name('patients.today');
+
+    Route::post('/prescription', [PrescriptionController::class, 'store'])->name('prescription');
+
+    Route::get('/prescription/{userId}/{date}', [PrescriptionController::class, 'show'])->name('prescription.show');
+
+    Route::get('/prescribed-patients', [PrescriptionController::class, 'patientsFromPrescription'])->name('prescribed.patients');
 });
+
+
+
 
 
 /*
@@ -105,6 +125,8 @@ Route::group(['middleware' => ['auth', 'patient']], function () {
     Route::post('/profile', [ProfileController::class, 'store'])->name('profile.store');
 
     Route::post('/profile-pic', [ProfileController::class, 'profilePic'])->name('profile.pic');
+
+    Route::get('/my-prescription', [FrontendController::class, 'myPrescription'])->name('my.prescription');
 });
 
 

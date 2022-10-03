@@ -1,5 +1,5 @@
  <!-- Department Area Starts -->
-    <section class="department-area section-padding4">
+    <section class="department-area section-padding4" id="mydepartment">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">

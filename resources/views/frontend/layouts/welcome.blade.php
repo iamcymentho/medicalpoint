@@ -1,5 +1,5 @@
  <!-- Welcome Area Starts -->
-    <section class="welcome-area section-padding3">
+    <section class="welcome-area section-padding3" id="welcome">
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 align-self-center">
